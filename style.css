@@ -1,0 +1,32 @@
+body{
+    background-image: url('https://media.giphy.com/media/Yd8QUB5ZNFzaw/giphy.gif');
+    color: white;
+}
+
+
+p {
+    font-size: 26px;
+    color: 	#FF867A;
+
+}
+
+li{
+    font-size: 24px;
+    color: violet;
+
+}
+
+h1{
+    text-align: center;
+}
+
+
+}
+
+a:visited {
+    color: #7AFFEF;
+}
+
+a:hover {
+    color: #C57AFF;
+}
