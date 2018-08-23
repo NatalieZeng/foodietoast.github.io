@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAfcPjALzZ5gALTWsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzMzAAAAAxEREREwAAAxERIiEhMAADEREREREwAAMSERIRETAAAxESESEhMAADESESEhEwAAMSERERITAAAxEhESERMAAAMRISERMAAAMRESEhETAAMSEhEhISEwAxERESERETAAMzERERMzAAAAMzMzMwAAAAAAAAAAAADwDwAA4AcAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADgBwAAwAMAAIABAACAAQAAwAMAAPAPAAD//wAA" rel="icon" type="image/x-icon" />
+<title>Navigation</title>
+
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="foody.html">Home</a></li>
+  <li><a href="aboutus.html">About</a></li>
+  <li><a href="addarestaurant.html">Add a Restaurant</a><li>
+  <li><a href="navigation.html">Navigation</a><li>
+</ul>
+
+</body>
+</html>
+
+<html>
+<title>FoodieToast</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<link rel="stylesheet" type="text/css" href="navi.css">
+
+<head>
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="http://www.jointdegree.eu/seeh/components/com_mailto/assets/close-x.png" class="btn_close" title="exit" alt="Close" /></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+
+
+<!---------------------FONTS---------------------->
+
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+
+<!---after this is where the magic happens B) ----------->
+<style type="text/css">
+
+/***************SCROLLBAR*********************/
+::-webkit-scrollbar-thumb {
+height:auto;
+background-color:#000; /*color of scrollbar*/
+}
+
+::-webkit-scrollbar {
+height:5px;
+width:3px;
+background-color:transparent;
+}
+
+
+/******************BODY LINKS******************/
+a:link, a:active, a:visited{
+color:#ddd; /*this is the color of the inside links*/
+text-decoration: none;
+-webkit-transition: color 0.4s ease-out;
+-moz-transition: color 0.4s ease-out;
+}
+
+a:hover {
+color:transparent; /*this is the color of links on hover - right now it will just fade away but you can make it a color*/
+-webkit-transition: all 0.4s linear;
+-webkit-transition: all 0.4s linear;
+-moz-transition: all 0.4s linear;
+transition: all 0.4s linear;
+}
+
+/********************BODY********************/
+
+
+/********************NAVIGATION LINKS********************/
+
+
+/********************FAQ********************/
+#faq {
+width:210px;
+height:210px;
+margin-left:0px;
+margin-top:100px;
+border:2px solid #fff;
+padding:10px;
+border-radius:100%;
+background-color:#000; /*background of box*/
+font-family: 'Rock Salt', cursive;
+letter-spacing:7px;
+text-align:center;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+#faq a {
+color:#fff; /*color of nav links*/
+text-transform:uppercase;
+margin-left:10px;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+#faq a:hover {
+color:transparent; /*color of nav links hover*/
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+/********************ABOUT********************/
+#about {
+width:210px;
+height:210px;
+margin-left:360px;
+margin-top:-215px;
+border:2px solid #000;
+padding:10px;
+border-radius:100%;
+background-color:#fff; /*background of box*/
+font-family: 'Rock Salt', cursive;
+letter-spacing:7px;
+}
+#about a {
+color:#000; /*color of nav links*/
+text-transform:uppercase;
+margin-left:12px;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+#about a:hover {
+color:transparent; /*color of nav links hover*/
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+/********************LINKS********************/
+#links {
+width:210px;
+height:210px;
+margin-left:710px;
+margin-top:-215px;
+border:2px solid #fff;
+padding:10px;
+border-radius:100%;
+background-color:#000; /*background of box*/
+font-family: 'Rock Salt', cursive;
+letter-spacing:5px;
+}
+#links a {
+color:#fff; /*color of nav links*/
+text-transform:uppercase;
+margin-left:20px;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+#links a:hover {
+color:transparent; /*color of nav links hover*/
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+/********************BLOGROLL********************/
+#br {
+width:210px;
+height:210px;
+margin-left:1045px;
+margin-top:-215px;
+border:2px solid #000;
+border-radius:100%;
+background-color:#fff; /*background of box*/
+font-family: 'Rock Salt', cursive;
+letter-spacing:7px;
+}
+
+#br a {
+color:#000; /*color of nav links*/
+text-transform:uppercase;
+margin-left:40px;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+#br a:hover {
+color:transparent; /*color of nav links hover*/
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+
+#fade { /*--Transparent background layer--*/
+display: none; /*--hidden by default--*/
+background: #000;
+position: fixed; left: 0; top: 0;
+width: 100%; height: 100%;
+opacity: .80;
+z-index: 9999;
+}
+.popup_block{
+display: none; /*--hidden by default--*/
+background: #fff;
+padding: 20px;
+border: 20px solid #000;
+float: left;
+position: fixed;
+top: 50%; left: 50%;
+z-index: 99999;
+/*--CSS3 Box Shadows--*/
+-webkit-box-shadow: 0px 0px 20px #000;
+-moz-box-shadow: 0px 0px 20px #000;
+box-shadow: 0px 0px 20px #000;
+/*--CSS3 Rounded Corners--*/
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+img.btn_close {
+float: right;
+margin: -5px -5px 0 0;
+}
+/*--Making IE6 Understand Fixed Positioning--*/
+*html #fade {
+position: absolute;
+}
+*html .popup_block {
+position: absolute;
+}
+
+#box {
+width:960px;
+margin-left:0px;
+margin-top:0px;
+border:2px solid #000;
+padding:10px;
+height:240px;
+overflow:scroll;
+background-color:#fff; /*background of box*/
+}
+#box h1 {
+font-family:century gothic;
+font-size:15px;
+text-decoration:none;
+font-weight:normal;
+text-align:justify;
+text-transform:uppercase;
+letter-spacing:5px;
+line-height:2px;
+border-bottom:1px solid #000;
+padding-bottom:15px;
+font-style: italic;
+}
+#box p {
+font-family:century gothic;
+font-size:12px;
+text-align:right;
+line-height:20px;
+letter-spacing:3px;
+}
+
+#ask {
+display:block;
+width:980px;
+margin-top:30px;
+margin-left:0px;
+background-color:#fff; /*background of askbox*/
+border:2px solid #000; /*border of ask box*/
+}
+
+#picr {
+width:200px;
+margin-left:0px;
+margin-top:0px;
+border:2px solid #000;
+padding:10px;
+height:210px;
+overflow:hidden;
+background-color:#fff; /*background of box*/
+}
+#pic img{
+width:200px;
+height:210px;
+}
+
+#quick {
+width:200px;
+margin-left:0px;
+margin-top:20px;
+border:2px solid #000;
+padding:10px;
+height:220px;
+overflow:scroll;
+background-color:#fff; /*background of box*/
+line-height:12px;
+text-align:left;
+letter-spacing:3px;
+font-family:century gothic;
+font-size:10px;}
+
+#abtt {
+font-size:20px;
+margin-top:-490px;
+margin-left:260px;
+font-family:century gothic;
+letter-spacing:10px;
+text-transform:uppercase;
+text-align:left;
+width:700px;
+}
+
+#stuff {
+width:670px;
+margin-left:260px;
+margin-top:10px;
+border:2px solid #000;
+padding:20px;
+height:400px;
+overflow:scroll;
+background-color:#fff; /*background of box*/
+line-height:15px;
+text-align:left;
+letter-spacing:3px;
+font-family:century gothic;
+font-size:10px;
+}
+
+#stuff h1 {
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:8px;
+}
+
+#b1t {
+margin-top:100px;
+margin-left:100px;
+font-family:century gothic;
+font-size:20px;
+text-align:center;
+width:200px;
+}
+#box1 {
+margin-top:0px;
+margin-left:100px;
+height:200px;
+width:200px;
+background-color:#000;
+border:2px solid #000;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+#box1:hover #nav{
+opacity:1;
+}
+
+#b2t {
+margin-top:-20px;
+margin-left:400px;
+font-family:century gothic;
+font-size:20px;
+text-align:center;
+width:200px;
+}
+#box2 {
+border:2px solid #000;
+margin-top:-202px;
+margin-left:400px;
+height:200px;
+width:200px;
+background-color:#000;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+#box2:hover #nav{
+opacity:1;
+}
+#b3t {
+margin-top:-20px;
+margin-left:700px;
+font-family:century gothic;
+font-size:20px;
+text-align:center;
+width:200px;
+padding-bottom:10px;
+}
+#box3 {
+border:2px solid #000;
+margin-top:-204px;
+margin-left:700px;
+height:200px;
+width:200px;
+background-color:#000;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+#box3:hover #nav{
+opacity:1;
+}
+
+#nav {
+margin-left:-10px;
+width:200px;
+z-index:333;
+opacity:0;
+position:absolute;
+text-align:center;
+line-height:20px;
+padding:10px;
+padding-top:10px;
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+-ms-transition: all 0.7s ease-in-out;
+transition: all 0.7s ease-in-out;
+}
+#nav a {
+display:inline-block;
+font-size:10px;
+padding:4px;
+font-family:century gothic;
+letter-spacing:3px;
+width:150px;
+text-transform:uppercase;
+color:#000;
+margin:0px 5px 5px 0px;
+background:#fff;
+border-radius:1px;
+border:2px solid #fff;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+#nav a:hover {
+width:100px;
+border:2px solid #fff;
+background:transparent;
+color:#fff;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+}
+
+#blogrl {
+width:940px;
+margin-left:0px;
+margin-top:0px;
+border:2px solid #000;
+padding:10px;
+height:480px;
+overflow:scroll;
+background-color:#fff; /*background of box*/
+font-family:century gothic;
+text-align:center;
+font-size:20px;
+text-transform:uppercase;
+letter-spacing:5px;
+}
+
+#yeah {
+font-size:10px;
+color:#333;
+padding:10px;
+line-height:30px;
+}
+#yeah a {
+color:#333;
+text-decoration:none;
+padding:10px;
+}
+#yeah a img {
+color:#333;
+border-radius:100%;
+border:2px solid #000;
+width:80px;
+height:80px;
+}
+
+#s-m-t-tooltip {
+font-size:8px;
+max-width:300px;
+padding:3px;
+margin:13px 0px 0px 13px;
+z-index:10;
+background-color:#fff;
+font-weight:bold;
+border:1px solid #000; /*border of hover name box on blogs*/
+font-family:consolas;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#000; /*color of font in box*/
+z-index:999999999999999999999999999999999999;
+}
+
+.mezybreezy {
+bottom:5px;
+left:5px;
+position:fixed;
+font-family:century gothic;
+font-size:10px;
+color:#000;}
+.mezybreezy a {
+width:100px;
+color:#000;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;}
+.mezybreezy a:hover {
+color:transparent;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="http://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:10,
+tip_fade_speed:100,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+</head>
+
+<body>
+
+
+<h1 align="center">Click on a borough to</h1>
+  <h2 align="center">find cheap restaurants.</h2>
+
+
+<div id="faq">
+<p><br><br><a href="bronx.html" rel="fask" class="poplight">Bronx</a>
+</div>
+
+<div id="about">
+<p><br><br><a href="brooklyn.html" rel="abt" class="poplight">Brooklyn</a>
+</div>
+
+<div id="links">
+<p><br><br><a href="manhattan.html" rel="link" class="poplight">Manhattan</a>
+</div>
+
+<div id="br">
+<p><br><br><a href="queens.html" rel="blogroll" class="poplight">Queens</a>
+</div>
+
+<!-- i worked rly rly hard on this theme please don't touch -->
+<div class="mezybreezy">
+✿ <a href="http://madthms.tumblr.com/" target="_blank">madthms</a>
+</div>
+<!--PLeaSe -->
+
+<!---after this is where you edit everything inside ----------->
+</body>
+
+<div id="fask" class="popup_block" style="height:500px;">
+
+
+
+<div id="abt" class="popup_block" style="height:500px;">
+<div id="picr"><div id="pic">
+<!---THIS IS THE IMAGE----->
+<img src="https://d2c4zcito95dfk.cloudfront.net/assets/default_profile_image_large-e61b362fc14b3206204a64e603d7ad80.png">
+</div></div>
+
+</div>
+<div id="box3">
+<div id="nav">
+
+</div>
+</div>
+
+<div id="blogroll" class="popup_block" style="height:500px;">
+<div id="blogrl">
+following <br><br>
+<div id="yeah">
+
+{block:Following}{block:Followed}<a title='{FollowedName}' target='_blank' href='{FollowedURL}'><img border='0' src='{FollowedPortraitURL-96}' />{/block:Followed}{/block:Following}
+
+</div>
+</div>
+</div>
+</html>
